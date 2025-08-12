@@ -1,6 +1,7 @@
 //import express from "express"
 const express = require('express') 
 require('dotenv').config();
+const data = require('./data.js')
 //stroing value of express() in variable
 const app = express()
 
@@ -23,6 +24,9 @@ app.get('/login', (req,res) => {
 
 app.get('/youtube', (req,res) => {
     res.send('<h2>chai aur code</h2>')
+})
+app.get('/github', (req,res) => {
+    res.json(data);
 })
 
 app.listen(process.env.PORT,() => {
